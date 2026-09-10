@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipit Saputra | Portofolio Ceria & Profesional</title>
+    <!-- Google Fonts untuk Kombinasi Profesional & Childish/Playful -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #FAF7F0;
+            --card-bg: #FFFFFF;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --border-color: #1A202C;
+            --shadow-color: #1A202C;
+            
+            /* Warna Akses Setengah Pro Setengah Fun */
+            --purple-pro: #6C5CE7;
+            --pink-fun: #FF7675;
+            --yellow-pop: #FFEAA7;
+            --green-fresh: #00B894;
+            --blue-sky: #74B9FF;
+            
+            --border-style: 3px solid var(--border-color);
+            --box-shadow: 4px 4px 0px var(--shadow-color);
+            --box-shadow-hover: 6px 6px 0px var(--shadow-color);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Fredoka', cursive, sans-serif;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        /* Header & Nav */
+        header {
+            position: sticky;
+            top: 15px;
+            z-index: 1000;
+            margin-bottom: -50px;
+        }
+
+        .navbar {
+            background-color: var(--card-bg);
+            border: var(--border-style);
+            box-shadow: var(--box-shadow);
+            border-radius: 50px;
+            padding: 12px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--purple-pro);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background-color: var(--yellow-pop);
+            border: 2px solid var(--border-color);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--border-color);
+            transform: rotate(-3deg);
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--yellow-pop);
+            color: var(--border-color);
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            background: var(--yellow-pop);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--blue-sky);
+            border: var(--border-style);
+            box-shadow: 3px 3px 0px var(--shadow-color);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            transform: rotate(-1.5deg);
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            color: var(--border-color);
+        }
+
+        .hero-title .highlight {
+            color: var(--purple-pro);
+            background: linear-gradient(120deg, var(--yellow-pop) 0%, var(--yellow-pop) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 88%;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 26px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Fredoka', sans-serif;
+            text-decoration: none;
+            border-radius: 16px;
+            border: var(--border-style);
+            box-shadow: var(--box-shadow);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--purple-pro);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: var(--box-shadow-hover);
+            background-color: #5b4bc4;
+        }
+
+        .btn-secondary {
+            background-color: var(--pink-fun);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        /* Avatar Container & Doodle Badges */
+        .avatar-card {
+            background-color: var(--yellow-pop);
+            border: var(--border-style);
+            box-shadow: 6px 6px 0px var(--shadow-color);
+            border-radius: 30px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .avatar-img {
+            width: 100%;
+            max-width: 240px;
+            height: auto;
+            border-radius: 50%;
+            background-color: white;
+            border: var(--border-style);
+            padding: 10px;
+            margin: 0 auto 15px auto;
+        }
+
+        .floating-tag {
+            position: absolute;
+            background-color: white;
+            border: 2px solid var(--border-color);
+            box-shadow: 3px 3px 0px var(--shadow-color);
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            animation: floatAnim 3s infinite ease-in-out alternate;
+        }
+
+        .tag-1 { top: -10px; left: -10px; transform: rotate(-8deg); background-color: var(--green-fresh); color: white; }
+        .tag-2 { bottom: 20px; right: -15px; transform: rotate(6deg); background-color: var(--pink-fun); color: white; }
+
+        @keyframes floatAnim {
+            0% { transform: translateY(0px) rotate(-5deg); }
+            100% { transform: translateY(-8px) rotate(-2deg); }
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            background-color: var(--yellow-pop);
+            border: 2px solid var(--border-color);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            transform: rotate(-1deg);
+        }
+
+        .section-title {
+            font-size: 2.3rem;
+            color: var(--border-color);
+        }
+
+        /* About Me Section */
+        .about-card {
+            background-color: var(--card-bg);
+            border: var(--border-style);
+            box-shadow: var(--box-shadow);
+            border-radius: 24px;
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .about-text h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--purple-pro);
+        }
+
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hobby-item {
+            background-color: #F8F9FA;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .hobby-item:hover {
+            transform: translateY(-3px) rotate(1deg);
+            background-color: var(--yellow-pop);
+        }
+
+        .hobby-icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .hobby-title {
+            font-weight: 700;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            border: var(--border-style);
+            box-shadow: var(--box-shadow);
+            border-radius: 20px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .skill-icon-bg {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .skill-title-text h4 {
+            font-size: 1.2rem;
+        }
+
+        .skill-title-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 16px;
+            background-color: #EDF2F7;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 6px;
+            background-size: 30px 30px;
+            background-image: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.25) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.25) 50%,
+                rgba(255, 255, 255, 0.25) 75%,
+                transparent 75%,
+                transparent
+            );
+        }
+
+        .fill-coding { width: 55%; background-color: var(--purple-pro); }
+        .fill-music { width: 75%; background-color: var(--pink-fun); }
+        .fill-spirit { width: 95%; background-color: var(--green-fresh); }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: var(--border-style);
+            box-shadow: var(--box-shadow);
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .project-banner {
+            background-color: var(--yellow-pop);
+            border-bottom: var(--border-style);
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .project-doodle {
+            font-size: 4rem;
+        }
+
+        .project-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1.5px solid var(--border-color);
+            background-color: #EDF2F7;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background-color: var(--card-bg);
+            border: var(--border-style);
+            box-shadow: 8px 8px 0px var(--shadow-color);
+            border-radius: 28px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            background-color: #F8F9FA;
+            border: 2px solid var(--border-color);
+            padding: 15px 20px;
+            border-radius: 16px;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            background-color: var(--yellow-pop);
+            border: 2px solid var(--border-color);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            padding: 12px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: var(--purple-pro);
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Custom Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--yellow-pop);
+            border: var(--border-style);
+            box-shadow: var(--box-shadow);
+            padding: 15px 25px;
+            border-radius: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(150px);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 2000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: var(--border-style);
+            background-color: white;
+            margin-top: 50px;
+            font-weight: 600;
+        }
+
+        /* Responsif Media Queries */
+        @media (max-width: 768px) {
+            .hero-grid, .about-card, .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2.3rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                border: var(--border-style);
+                box-shadow: var(--box-shadow);
+                border-radius: 20px;
+                padding: 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .avatar-card {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="container">
+        <nav class="navbar">
+            <a href="#home" class="logo">
+                Pipit.dev 🚀 <span>Pelajar HTML</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰ Menu</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. HOME SECTION -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>✨</span> Half Pro & Half Fun!
+                </div>
+                <h1 class="hero-title">
+                    Halo, Saya <br><span class="highlight">Pipit Saputra</span> 👋
+                </h1>
+                <p class="hero-desc">
+                    Seorang <strong>Pelajar Baru HTML</strong> yang suka mengeksplorasi dunia pemrograman web sambil menikmati alunan musik! 🎸💻
+                </p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn btn-primary">Lihat Project 🚀</a>
+                    <a href="#contact" class="btn btn-secondary">Hubungi Saya 📞</a>
+                </div>
+            </div>
+
+            <!-- Interactive Avatar Area -->
+            <div class="avatar-card">
+                <div class="floating-tag tag-1">👨‍💻 Mini Dev</div>
+                <div class="floating-tag tag-2">🎵 Jamming Time!</div>
+                
+                <!-- Graphic SVG Avatar Pipit -->
+                <svg class="avatar-img" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="90" fill="#FFEAA7" />
+                    <!-- Hair -->
+                    <path d="M50 80 Q100 20 150 80 Q140 40 100 35 Q60 40 50 80 Z" fill="#2D3748" />
+                    <!-- Head -->
+                    <circle cx="100" cy="100" r="45" fill="#FFE0B2" stroke="#2D3748" stroke-width="4"/>
+                    <!-- Glasses (Pro Look) -->
+                    <rect x="70" y="90" width="22" height="18" rx="4" fill="none" stroke="#2D3748" stroke-width="3"/>
+                    <rect x="108" y="90" width="22" height="18" rx="4" fill="none" stroke="#2D3748" stroke-width="3"/>
+                    <line x1="92" y1="99" x2="108" y2="99" stroke="#2D3748" stroke-width="3"/>
+                    <!-- Smile (Childish/Fun Look) -->
+                    <path d="M 85 120 Q 100 135 115 120" fill="none" stroke="#2D3748" stroke-width="4" stroke-linecap="round"/>
+                    <!-- Headphones -->
+                    <path d="M 50 95 A 50 50 0 0 1 150 95" fill="none" stroke="#FF7675" stroke-width="8" stroke-linecap="round"/>
+                    <rect x="45" y="88" width="12" height="25" rx="5" fill="#6C5CE7" stroke="#2D3748" stroke-width="2"/>
+                    <rect x="143" y="88" width="12" height="25" rx="5" fill="#6C5CE7" stroke="#2D3748" stroke-width="2"/>
+                </svg>
+
+                <h3 style="font-size: 1.3rem; margin-top: 5px;">Pipit Saputra</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">HTML Learner & Musician</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">🎈 Kenali Saya Lebih Dekat</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+
+            <div class="about-card">
+                <div class="about-text">
+                    <h3>Semangat Belajar Hal Baru! 🚀</h3>
+                    <p style="margin-bottom: 15px;">
+                        Saya adalah seorang <strong>Pelajar Baru HTML</strong>. Saya baru saja memulai perjalanan di dunia pemograman web, namun memiliki antusiasme yang sangat tinggi untuk terus tumbuh dan membuat tampilan web yang keren!
+                    </p>
+                    <p>
+                        Kombinasi antara logika koding dan kreativitas seni musik membuat saya menikmati proses belajar ini dengan cara yang menyenangkan dan penuh warna.
+                    </p>
+                </div>
+
+                <div class="about-hobbies">
+                    <h4 style="font-family: 'Fredoka', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Hobi Favorit Saya:</h4>
+                    <div class="hobby-grid">
+                        <div class="hobby-item">
+                            <div class="hobby-icon">💻</div>
+                            <div class="hobby-title">Koding</div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Ngetik tag HTML & CSS</p>
+                        </div>
+                        <div class="hobby-item">
+                            <div class="hobby-icon">🎵</div>
+                            <div class="hobby-title">Musik</div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Main instrumen & jamming</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SKILLS SECTION -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">🛠️ Kemampuan & Keahlian</span>
+                <h2 class="section-title">My Skills</h2>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Skill 1 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon-bg" style="background-color: #E0D7FF;">💻</div>
+                        <div class="skill-title-text">
+                            <h4>Koding Web (Basic)</h4>
+                            <p>Pemahaman dasar struktur HTML & CSS</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.85rem;">
+                        <span>Level: Basic / Pemula</span>
+                        <span>55%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill fill-coding"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon-bg" style="background-color: #FFD8D7;">🎸</div>
+                        <div class="skill-title-text">
+                            <h4>Bermain Alat Musik</h4>
+                            <p>Gitar, Keyboard & Pendengaran Nada</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.85rem;">
+                        <span>Level: Terampil</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill fill-music"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon-bg" style="background-color: #D1F7EA;">🔥</div>
+                        <div class="skill-title-text">
+                            <h4>Semangat Belajar</h4>
+                            <p>Pantang menyerah mencoba hal baru</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.85rem;">
+                        <span>Level: Super Maksimal</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill fill-spirit"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PROJECTS SECTION -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">🎨 Hasil Karya Saya</span>
+                <h2 class="section-title">My Projects</h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Portofolio Utama -->
+                <div class="project-card">
+                    <div class="project-banner">
+                        <div class="project-doodle">🌐</div>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-tags">
+                                <span class="tag" style="background-color: var(--yellow-pop);">HTML5</span>
+                                <span class="tag" style="background-color: var(--blue-sky); color: white;">CSS3</span>
+                                <span class="tag" style="background-color: var(--pink-fun); color: white;">Responsive</span>
+                            </div>
+                            <h3 class="project-title">Website Portofolio</h3>
+                            <p class="project-desc">
+                                Website portofolio pribadi pertama saya yang dibuat menggunakan HTML dan CSS murni dengan perpaduan tema setengah profesional dan setengah manis/childish.
+                            </p>
+                        </div>
+                        <button onclick="showToast('Anda sedang melihat project ini sekarang! 🎉')" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 10px;">
+                            Project Saat Ini ✨
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Placeholder Project Masa Depan -->
+                <div class="project-card">
+                    <div class="project-banner" style="background-color: var(--blue-sky);">
+                        <div class="project-doodle">🎼</div>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-tags">
+                                <span class="tag">Coming Soon</span>
+                                <span class="tag">Musik App</span>
+                            </div>
+                            <h3 class="project-title">Web Pemutar Musik Mini</h3>
+                            <p class="project-desc">
+                                Rencana project selanjutnya: Pemutar lagu interaktif berbasis web sederhana untuk menyalurkan hobi musik saya.
+                            </p>
+                        </div>
+                        <button onclick="showToast('Project ini sedang dalam proses pengembangan! ⏳')" class="btn btn-secondary" style="width: 100%; justify-content: center; padding: 10px;">
+                            Segera Hadir 🚀
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">💬 Mari Berteman & Berkolaborasi</span>
+                <h2 class="section-title">Contact Me</h2>
+            </div>
+
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--purple-pro);">Hubungi Pipit 📲</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Punya pertanyaan, ingin berdiskusi seputar koding HTML, atau sekadar mau jamming musik bareng? Kirimkan pesan ya!
+                    </p>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">TELEPON / WHATSAPP</div>
+                            <a href="https://wa.me/6281234567890" target="_blank" style="text-decoration: none; color: var(--border-color); font-weight: 700; font-size: 1.05rem;">
+                                +62 812-3456-7890
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item" style="margin-top: 12px;">
+                        <div class="contact-icon" style="background-color: var(--green-fresh);">📍</div>
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">LOKASI</div>
+                            <div style="font-weight: 700; font-size: 1rem;">Indonesia 🇮🇩</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Kontak Sederhana -->
+                <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Nama Kamu</label>
+                        <input type="text" id="name" class="form-input" placeholder="Masukkan nama kamu..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan / Catatan</label>
+                        <textarea id="message" class="form-input" placeholder="Halo Pipit, salam kenal!..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="justify-content: center; width: 100%;">
+                        Kirim Pesan 🎉
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification Overlay -->
+    <div id="toast" class="toast">
+        <span id="toastIcon">🎈</span>
+        <span id="toastMessage">Pesan berhasil dikirim!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Pipit Saputra. Dibuat dengan ☕, 🎸 dan semangat HTML!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Navigasi Menu Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Tutup menu mobile ketika link diklik
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Fungsi Toast Notifikasi Sederhana
+        function showToast(message, icon = '🎈') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = document.getElementById('toastIcon');
+
+            toastMessage.textContent = message;
+            toastIcon.textContent = icon;
+
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Simulasi Kirim Form
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('name').value;
+            showToast(`Terima kasih ${nameInput}, pesan kamu telah terkirim! 🚀`, '📬');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
